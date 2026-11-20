@@ -1,0 +1,7 @@
+.theos/
+.theos-ci/
+packages/
+cloud-output/
+.DS_Store
+__pycache__/
+*.pyc

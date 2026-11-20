@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>title</key><string>键盘工具栏 AI</string>
+    <key>section</key><string>键盘工具栏设置</string>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>label</key><string>启用工具栏</string>
+            <key>kind</key><string>switch</string>
+            <key>key</key><string>enabled</string>
+            <key>default</key><false/>
+        </dict>
+        <dict>
+            <key>label</key><string>工具栏放至底部</string>
+            <key>kind</key><string>switch</string>
+            <key>key</key><string>ToolbarAtBottom</string>
+            <key>default</key><false/>
+        </dict>
+        <dict>
+            <key>label</key><string>文字切换为图标</string>
+            <key>kind</key><string>switch</string>
+            <key>key</key><string>ShowIcons</string>
+            <key>default</key><true/>
+        </dict>
+        <dict>
+            <key>label</key><string>启用震动反馈</string>
+            <key>kind</key><string>switch</string>
+            <key>key</key><string>HapticFeedback</string>
+            <key>default</key><true/>
+        </dict>
+        <dict>
+            <key>label</key><string>工具栏背景色</string>
+            <key>kind</key><string>switch</string>
+            <key>key</key><string>toolbarBgEnabled</string>
+            <key>default</key><false/>
+        </dict>
+        <dict>
+            <key>label</key><string>浅色模式颜色</string>
+            <key>kind</key><string>color</string>
+            <key>key</key><string>toolbarLightColor</string>
+            <key>initialColor</key><string>#FFFFFFFF</string>
+        </dict>
+        <dict>
+            <key>label</key><string>深色模式颜色</string>
+            <key>kind</key><string>color</string>
+            <key>key</key><string>toolbarDarkColor</string>
+            <key>initialColor</key><string>#FF202020</string>
+        </dict>
+        <dict>
+            <key>label</key><string>手势动作设置</string>
+            <key>kind</key><string>buttons</string>
+        </dict>
+        <dict>
+            <key>label</key><string>AI 问答</string>
+            <key>kind</key><string>ai</string>
+        </dict>
+    </array>
+</dict>
+</plist>
