@@ -7,21 +7,11 @@ NSArray<NSDictionary *> *haoge_keyboardtoolbarai_actionCatalog(void) {
         @{@"id": @"selectAll", @"name": @"全选", @"symbol": @"selection.pin.in.out", @"symbols": @[@"selection.pin.in.out", @"arrow.up.left.and.arrow.down.right"]},
         @{@"id": @"selectAllAndCopy", @"name": @"复制", @"note": @"先全选再复制", @"symbol": @"doc.on.doc"},
         @{@"id": @"paste", @"name": @"粘贴", @"symbol": @"doc.on.clipboard", @"symbols": @[@"doc.on.clipboard", @"arrow.down.doc"]},
-        @{@"id": @"showClipboard", @"name": @"剪贴板", @"note": @"需安装 Clipboard 插件", @"symbol": @"list.clipboard", @"symbols": @[@"list.clipboard", @"list.bullet.rectangle", @"doc.text"]},
         @{@"composite": @YES, @"id": @"kt_showAI", @"name": @"AI问答", @"note": @"在 AI 问答设置中配置引擎和 API Key", @"symbol": @"bubble.left.and.bubble.right", @"symbols": @[@"bubble.left.and.bubble.right", @"text.bubble"]},
         @{@"id": @"cut", @"name": @"剪切", @"symbol": @"scissors"},
         @{@"id": @"undo", @"name": @"撤销", @"symbol": @"arrow.uturn.backward"},
         @{@"id": @"clearText", @"name": @"清空", @"symbol": @"trash"},
-        @{@"id": @"moveLeft", @"name": @"光标左移", @"symbol": @"arrow.left.circle"},
-        @{@"id": @"moveRight", @"name": @"光标右移", @"symbol": @"arrow.right.circle"},
-        @{@"id": @"insertNewline", @"name": @"换行", @"symbol": @"arrow.turn.down.left"},
-        @{@"id": @"showEmojiKeyboard", @"name": @"表情键盘", @"symbol": @"face.smiling", @"symbols": @[@"face.smiling", @"face.smiling.inverse", @"smiley"]},
-        @{@"id": @"done", @"name": @"收起键盘", @"symbol": @"keyboard.chevron.compact.down", @"symbols": @[@"keyboard.chevron.compact.down", @"checkmark.circle"]},
-        @{@"composite": @YES, @"id": @"snapperFreeze", @"name": @"Snapper 冻结", @"note": @"需安装 Snapper 4", @"symbol": @"rectangle.and.hand.point.up.left", @"symbols": @[@"rectangle.and.hand.point.up.left", @"camera.viewfinder", @"viewfinder", @"camera"]},
-        @{@"composite": @YES, @"id": @"snapperLong", @"name": @"Snapper 长截图", @"note": @"需安装 Snapper 4", @"symbol": @"rectangle.and.hand.point.up.left", @"symbols": @[@"rectangle.and.hand.point.up.left", @"arrow.down.to.line", @"arrow.down.doc"]},
-        @{@"composite": @YES, @"id": @"screenshotShell", @"name": @"仅截屏套壳", @"note": @"需装 ScreenShell Pro", @"symbol": @"rectangle.and.hand.point.up.left", @"symbols": @[@"rectangle.and.hand.point.up.left", @"rectangle.on.rectangle", @"square.on.square"]},
-        @{@"composite": @YES, @"id": @"screenshotWatermark", @"name": @"仅截图水印", @"note": @"需装 ScreenShell Pro", @"symbol": @"rectangle.and.hand.point.up.left", @"symbols": @[@"rectangle.and.hand.point.up.left", @"drop", @"signature"]},
-        @{@"composite": @YES, @"id": @"screenshotBoth", @"name": @"截屏套壳+水印", @"note": @"需装 ScreenShell Pro", @"symbol": @"rectangle.and.hand.point.up.left", @"symbols": @[@"rectangle.and.hand.point.up.left", @"square.on.square", @"rectangle.on.rectangle"]}
+        @{@"id": @"done", @"name": @"收起键盘", @"symbol": @"keyboard.chevron.compact.down", @"symbols": @[@"keyboard.chevron.compact.down", @"checkmark.circle"]}
     ];
 }
 
@@ -52,7 +42,7 @@ NSArray<NSString *> *haoge_keyboardtoolbarai_normalizeButtons(id source) {
     }
     return result;
 }
-// 0x39abc: default buttons omit entries flagged composite (AI/external actions).
+// Default buttons omit the optional AI entry.
 NSArray<NSString *> *haoge_keyboardtoolbarai_defaultButtons(void) {
     NSMutableArray *result=[NSMutableArray array];
     for (NSDictionary *item in haoge_keyboardtoolbarai_actionCatalog())
@@ -62,7 +52,7 @@ NSArray<NSString *> *haoge_keyboardtoolbarai_defaultButtons(void) {
 // 0x39d78: missing tap defaults to the button's own action; missing swipe is nil.
 // IMPORTANT: an explicit empty string disables a binding, rather than restoring it.
 NSString *haoge_keyboardtoolbarai_bindingAction(id bindings, NSString *button, NSInteger direction) {
-    if (!button.length) return nil;
+    if (!button.length || ![haoge_keyboardtoolbarai_actionIDs() containsObject:haoge_keyboardtoolbarai_canonicalAction(button)]) return nil;
     id perButton=[bindings isKindOfClass:NSDictionary.class]?bindings[button]:nil;
     id action=[perButton isKindOfClass:NSDictionary.class]?perButton[haoge_keyboardtoolbarai_gestureKey(direction)]:nil;
     if (!action) return direction==0?button:nil;
@@ -73,13 +63,51 @@ NSString *haoge_keyboardtoolbarai_bindingAction(id bindings, NSString *button, N
 // 0x39fb0: nil/empty action writes @"", not removal of the gesture key.
 // The caller persists the returned dictionary under ActionBindings.
 NSDictionary *haoge_keyboardtoolbarai_storeBinding(id bindings,NSString *button,NSInteger direction,NSString *action) {
-    if (!button.length) return [bindings isKindOfClass:NSDictionary.class]?bindings:@{};
+    if (!button.length || ![haoge_keyboardtoolbarai_actionIDs() containsObject:button]) return [bindings isKindOfClass:NSDictionary.class]?bindings:@{};
     NSMutableDictionary *all=[bindings isKindOfClass:NSDictionary.class]?[bindings mutableCopy]:[NSMutableDictionary dictionary];
     id old=all[button];
     NSMutableDictionary *perButton=[old isKindOfClass:NSDictionary.class]?[old mutableCopy]:[NSMutableDictionary dictionary];
-    perButton[haoge_keyboardtoolbarai_gestureKey(direction)]=action.length?action:@"";
+    NSString *canonical=[action isKindOfClass:NSString.class]?haoge_keyboardtoolbarai_canonicalAction(action):@"";
+    perButton[haoge_keyboardtoolbarai_gestureKey(direction)]=[haoge_keyboardtoolbarai_actionIDs() containsObject:canonical]?canonical:@"";
     all[button]=perButton;
     return all;
+}
+
+// Clean obsolete toolbar records without altering enablement, colors, AI keys,
+// profiles, or other unrelated preferences. Explicit empty arrays stay empty.
+NSDictionary *haoge_keyboardtoolbarai_normalizeToolbarPreferences(id source) {
+    NSDictionary *raw=[source isKindOfClass:NSDictionary.class]?source:@{};
+    NSMutableDictionary *clean=[raw mutableCopy];
+    NSArray *valid=haoge_keyboardtoolbarai_actionIDs();
+    if ([raw[@"Buttons"] isKindOfClass:NSArray.class]) clean[@"Buttons"]=haoge_keyboardtoolbarai_normalizeButtons(raw[@"Buttons"]);
+    if ([raw[@"ActionBindings"] isKindOfClass:NSDictionary.class]) {
+        NSMutableDictionary *bindings=[NSMutableDictionary dictionary];
+        for (id button in raw[@"ActionBindings"]) {
+            if (![button isKindOfClass:NSString.class] || ![valid containsObject:button]) continue;
+            id old=raw[@"ActionBindings"][button];
+            if (![old isKindOfClass:NSDictionary.class]) continue;
+            NSMutableDictionary *directions=[NSMutableDictionary dictionary];
+            for (NSString *key in @[@"tap",@"up",@"down",@"left",@"right"]) {
+                id action=old[key];
+                if (!action) continue;
+                NSString *canonical=[action isKindOfClass:NSString.class]?haoge_keyboardtoolbarai_canonicalAction(action):@"";
+                // Keep explicit no-op instead of deleting tap and reactivating
+                // the button's default action after an upgrade.
+                directions[key]=[valid containsObject:canonical]?canonical:@"";
+            }
+            if (directions.count) bindings[button]=[directions copy];
+        }
+        clean[@"ActionBindings"]=[bindings copy];
+    }
+    if ([raw[@"ActionNames"] isKindOfClass:NSDictionary.class]) {
+        NSMutableDictionary *names=[NSMutableDictionary dictionary];
+        for (NSString *identifier in valid) {
+            id value=raw[@"ActionNames"][identifier];
+            if ([value isKindOfClass:NSString.class]) names[identifier]=value;
+        }
+        clean[@"ActionNames"]=[names copy];
+    }
+    return [clean copy];
 }
 
 // Readable ARC reconstruction of arm64 _haoge_keyboardtoolbarai_normalizeEndpoint, 0x26228.

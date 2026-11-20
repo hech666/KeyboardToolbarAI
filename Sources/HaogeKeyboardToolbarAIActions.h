@@ -11,17 +11,6 @@
 - (void)haoge_keyboardtoolbarai_undo;
 - (void)haoge_keyboardtoolbarai_clearText;
 - (void)haoge_keyboardtoolbarai_cut;
-- (void)haoge_keyboardtoolbarai_moveLeft;
-- (void)haoge_keyboardtoolbarai_moveRight;
-- (void)haoge_keyboardtoolbarai_moveCursor:(NSInteger)direction;
-- (void)haoge_keyboardtoolbarai_insertNewline;
-- (void)haoge_keyboardtoolbarai_showEmojiKeyboard;
-- (void)haoge_keyboardtoolbarai_showClipboard;
-- (void)haoge_keyboardtoolbarai_snapperFreeze;
-- (void)haoge_keyboardtoolbarai_snapperLong;
-- (void)haoge_keyboardtoolbarai_screenshotShell;
-- (void)haoge_keyboardtoolbarai_screenshotWatermark;
-- (void)haoge_keyboardtoolbarai_screenshotBoth;
 @end
 FOUNDATION_EXPORT id haoge_keyboardtoolbarai_actionProxy(HaogeKeyboardToolbarAIActions *actions);
 FOUNDATION_EXPORT void haoge_keyboardtoolbarai_haptic(void);

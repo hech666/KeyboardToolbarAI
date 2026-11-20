@@ -1,240 +1,247 @@
 {
-  "source_zip_sha256": "1a5ae168ff1485f39b4d6ea350d1116d8a106945735cf616edc288a629a1bcf7",
   "files": [
     {
       "path": "HaogeKeyboardToolbarAI.plist",
-      "sha256": "2ac54ca1fd977b3396e82eedc22815367801d840562d46991c862e26de0a41c3",
-      "bytes": 489
+      "bytes": 489,
+      "sha256": "2ac54ca1fd977b3396e82eedc22815367801d840562d46991c862e26de0a41c3"
     },
     {
       "path": "HaogeKeyboardToolbarAIBuild.mk",
-      "sha256": "11050d5abe39be076cfc2b64572829bcff5d305525a1531e97eac710dde022e1",
-      "bytes": 236
+      "bytes": 236,
+      "sha256": "11050d5abe39be076cfc2b64572829bcff5d305525a1531e97eac710dde022e1"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsAI.m",
-      "sha256": "26e2a068582aef499c9738d7d93258f3a8478ed260a4e89acdf8da3922276486",
-      "bytes": 11487
+      "bytes": 11487,
+      "sha256": "26e2a068582aef499c9738d7d93258f3a8478ed260a4e89acdf8da3922276486"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsAIEditors.h",
-      "sha256": "e63f1517a2332f46b009d9cbef65b49c9950f90a06ffa88629193281b29c8f27",
-      "bytes": 883
+      "bytes": 883,
+      "sha256": "e63f1517a2332f46b009d9cbef65b49c9950f90a06ffa88629193281b29c8f27"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsAIEditors.m",
-      "sha256": "e5a5b2ba4d354c2959401bfb450a36723fe5ccd4a552f63796c21a066c140c5a",
-      "bytes": 14750
+      "bytes": 14750,
+      "sha256": "e5a5b2ba4d354c2959401bfb450a36723fe5ccd4a552f63796c21a066c140c5a"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsButtons.m",
-      "sha256": "884d4c8ce6f524a73808568aef2fb91546140e6147d8d304c738d2a3af5680ac",
-      "bytes": 14868
+      "bytes": 14868,
+      "sha256": "884d4c8ce6f524a73808568aef2fb91546140e6147d8d304c738d2a3af5680ac"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsControllers.h",
-      "sha256": "9b26cd3d3bc89222fd8607f96a4a242b845a5e7842d925e91ef60db446daa50c",
-      "bytes": 308
+      "bytes": 308,
+      "sha256": "9b26cd3d3bc89222fd8607f96a4a242b845a5e7842d925e91ef60db446daa50c"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsMain.m",
-      "sha256": "d1f45446890d0e96f922e00b82a64a9c7a1ae68c83c9cd9e0259b7a16a6e2541",
-      "bytes": 8191
+      "bytes": 8191,
+      "sha256": "d1f45446890d0e96f922e00b82a64a9c7a1ae68c83c9cd9e0259b7a16a6e2541"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsPage.h",
-      "sha256": "b32d073f435d35d4d57b977c378461c667093ce0ba35cc4f0d182aa5f3ebf746",
-      "bytes": 1578
+      "bytes": 1578,
+      "sha256": "b32d073f435d35d4d57b977c378461c667093ce0ba35cc4f0d182aa5f3ebf746"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsPage.m",
-      "sha256": "b70036aaba4a4fdf2524bd580fd706a36d1c9912d75dc9b1d1ba0c865a3cdff7",
-      "bytes": 5875
+      "bytes": 5875,
+      "sha256": "b70036aaba4a4fdf2524bd580fd706a36d1c9912d75dc9b1d1ba0c865a3cdff7"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIRootListController.h",
-      "sha256": "3ca81719a797f61a4321bc244c9d49dee341d8971bc9d7a23c5bb8dd5325e105",
-      "bytes": 132
+      "bytes": 132,
+      "sha256": "3ca81719a797f61a4321bc244c9d49dee341d8971bc9d7a23c5bb8dd5325e105"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIRootListController.m",
-      "sha256": "73857fc4ace0c78f4388c7a128ce9b4ad7474e9547b7d68381f0650f47580eff",
-      "bytes": 867
+      "bytes": 867,
+      "sha256": "73857fc4ace0c78f4388c7a128ce9b4ad7474e9547b7d68381f0650f47580eff"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/Makefile",
-      "sha256": "8a5a72d898523ea21dc5b8a000819d6a96db1290175a60e34637621a5f0469da",
-      "bytes": 518
+      "bytes": 518,
+      "sha256": "8a5a72d898523ea21dc5b8a000819d6a96db1290175a60e34637621a5f0469da"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/Resources/HaogeKeyboardToolbarAIRoot.plist",
-      "sha256": "4cb83bf2c46fd08da17c5c82fa43da6d6ed8ce4964cc458a5623a86eccc3a4a1",
-      "bytes": 2373
+      "bytes": 2373,
+      "sha256": "4cb83bf2c46fd08da17c5c82fa43da6d6ed8ce4964cc458a5623a86eccc3a4a1"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/Resources/Info.plist",
-      "sha256": "09266e6128b6db710f71112cecf5f8189a26fc72441ca2dfc35d7d544551cbac",
-      "bytes": 681
+      "bytes": 681,
+      "sha256": "09266e6128b6db710f71112cecf5f8189a26fc72441ca2dfc35d7d544551cbac"
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/Resources/icon@2x.png",
-      "sha256": "57f45f09b2748cb68d5a7403f386304e0e3441929c34a37bded602d47c2f6270",
-      "bytes": 3446
+      "bytes": 3446,
+      "sha256": "57f45f09b2748cb68d5a7403f386304e0e3441929c34a37bded602d47c2f6270"
     },
     {
       "path": "Headers/HaogeKeyboardToolbarAIPrivate.h",
-      "sha256": "f3a4737a4bf57f011c5aa94639241fb38a894e7cce5a3424d09fbaf83582ba93",
-      "bytes": 111
+      "bytes": 111,
+      "sha256": "f3a4737a4bf57f011c5aa94639241fb38a894e7cce5a3424d09fbaf83582ba93"
     },
     {
       "path": "Makefile",
-      "sha256": "c84d191a4372782f320b4c1d51d7209a1d6d1d352e8d701ae6451a79545b3f71",
-      "bytes": 706
+      "bytes": 706,
+      "sha256": "c84d191a4372782f320b4c1d51d7209a1d6d1d352e8d701ae6451a79545b3f71"
     },
     {
       "path": "README.md",
-      "sha256": "19c9d714b6b30fbd717fcc7d4bf25d5a50ec44718c74eff4ee6257c06d500c9c",
-      "bytes": 5409
+      "bytes": 5694,
+      "sha256": "5b71efd42668a127715240167a67ec5cb026d563c0b0fa1c4d46b1f65d8686d8"
     },
     {
       "path": "SOURCE_MAP.md",
-      "sha256": "71e46639ac5c6ecec231100021d3402a38ff8a025a00de0c5ce290663d4c7b25",
-      "bytes": 2466
+      "bytes": 2534,
+      "sha256": "174dd27d909acee8adcd0238e3113e385f532cd296274be8f141f318deed9439"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIActionProxy.m",
-      "sha256": "21a0e31c6fd0447931601224ce50f87bd3c94df3f0d12e5a69f8e1af1e6a86fe",
-      "bytes": 2458
+      "bytes": 2458,
+      "sha256": "21a0e31c6fd0447931601224ce50f87bd3c94df3f0d12e5a69f8e1af1e6a86fe"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIActions.h",
-      "sha256": "29dc2774c635de64d9d4e37e5c293c5311888b65f75508b339e7f08988a149bd",
-      "bytes": 1237
+      "bytes": 700,
+      "sha256": "edca6ab3b15a30383d02f986142bf6e0ea8753c85984a71606fe600504415a55"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIActions.m",
-      "sha256": "18f7217d10fae2e42dd230e63b3e39c580804075daa4e222de4113bc9a0ec1a5",
-      "bytes": 10105
+      "bytes": 3286,
+      "sha256": "59f93155f74a5d47060a0dbe23fdb35e1a9afa659b5feb1cd714379c895bd9dc"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIChat.h",
-      "sha256": "b28873cdde0498e7dcc710cbda0d11f28ae0ce754cb97e7456360aab80b17a4c",
-      "bytes": 467
+      "bytes": 467,
+      "sha256": "b28873cdde0498e7dcc710cbda0d11f28ae0ce754cb97e7456360aab80b17a4c"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIChat.m",
-      "sha256": "8f44648283ca7896d18a4e32b38fffe8f520852806fa32b8ecc079d4a8e016d3",
-      "bytes": 47351
+      "bytes": 47351,
+      "sha256": "8f44648283ca7896d18a4e32b38fffe8f520852806fa32b8ecc079d4a8e016d3"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIColor.m",
-      "sha256": "0543a8fe7aab9e818d2683fe45d14c1476c463e3cc91f4b76b9fdad8d9a3a69a",
-      "bytes": 1207
+      "bytes": 1207,
+      "sha256": "0543a8fe7aab9e818d2683fe45d14c1476c463e3cc91f4b76b9fdad8d9a3a69a"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIConfig.h",
-      "sha256": "40662a634c805461ef2d18d48633caf05a466d50a64c2af2b0a017ce7179e1b3",
-      "bytes": 377
+      "bytes": 377,
+      "sha256": "40662a634c805461ef2d18d48633caf05a466d50a64c2af2b0a017ce7179e1b3"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIConfig.m",
-      "sha256": "fe6b5603607c3a55f5a13f614f9c176f1e5449df1968515b702a47ec4a69e418",
-      "bytes": 2581
+      "bytes": 2581,
+      "sha256": "fe6b5603607c3a55f5a13f614f9c176f1e5449df1968515b702a47ec4a69e418"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIGeometry.h",
-      "sha256": "849b4c5d6b1f29c433da39c332909ddfb52fbb95a2dc0f24fb48a906df2aa0ce",
-      "bytes": 1480
+      "bytes": 1480,
+      "sha256": "849b4c5d6b1f29c433da39c332909ddfb52fbb95a2dc0f24fb48a906df2aa0ce"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIHooks.m",
-      "sha256": "21cdd135e2e2074dac0a24126039f3354efebec5b76172375768a65c787da814",
-      "bytes": 9045
+      "bytes": 7627,
+      "sha256": "6b71d7f9b1cb22a1dfdcef0fe950b1b91f8230cdf127aed6bc09ec83ac428c97"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIModel.h",
-      "sha256": "f91de798d9df9cff643dc3d30c6b7063b9c7a37bd598dd730280d2d19ce36844",
-      "bytes": 957
+      "bytes": 1053,
+      "sha256": "fac76a24be3beca2f37d2fa4f44894b0ae3b126772ba746210e578500bf99a96"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIModel.m",
-      "sha256": "b94742b376233708f7fbe1a2dc3a2c54836f378e13ea5c2a3420d1c4a5b4862d",
-      "bytes": 13156
+      "bytes": 13597,
+      "sha256": "3bf7cd312656f31c77989cdd1b9a879e2273a9ecc5cf4d79716f777db837aeaa"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAINetwork.h",
-      "sha256": "98ef9374ccd99bcbf28b55a1d4c2ead8b1e4c141e1fdb7d14d5f8d1dcbb665ab",
-      "bytes": 1187
+      "bytes": 1187,
+      "sha256": "98ef9374ccd99bcbf28b55a1d4c2ead8b1e4c141e1fdb7d14d5f8d1dcbb665ab"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAINetwork.m",
-      "sha256": "b99a15ce3ca1541eb6271cf8bccf8b6064cfab257d8f97ed0bc78229fcc5c51b",
-      "bytes": 30306
+      "bytes": 30306,
+      "sha256": "b99a15ce3ca1541eb6271cf8bccf8b6064cfab257d8f97ed0bc78229fcc5c51b"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIPaths.h",
-      "sha256": "eeaac2ed515308aef6fd5c3a1813ae739cbbfb87fe7776c99a13a2509afb2318",
-      "bytes": 608
+      "bytes": 608,
+      "sha256": "eeaac2ed515308aef6fd5c3a1813ae739cbbfb87fe7776c99a13a2509afb2318"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIPreferences.h",
-      "sha256": "d630e29440e18dddc265d3c8e5e1f1420348d50ab810cbdaeaf89a6dcba642a2",
-      "bytes": 3462
+      "bytes": 3694,
+      "sha256": "bed7ed02812ba964db5a9fcef4ab1d26a4ff2e15e8a83508e67e6e5e9926329b"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIToolbar.h",
-      "sha256": "d15c89f0b70b35773e4f47151168d7a4116a492ad51525344469340f84346e7d",
-      "bytes": 4318
+      "bytes": 4318,
+      "sha256": "d15c89f0b70b35773e4f47151168d7a4116a492ad51525344469340f84346e7d"
     },
     {
       "path": "Sources/HaogeKeyboardToolbarAIToolbar.mm",
-      "sha256": "5bb0be21675820593e739f1c846049333a50160c484d2b4a346f4e18af1ec60b",
-      "bytes": 26437
+      "bytes": 26437,
+      "sha256": "5bb0be21675820593e739f1c846049333a50160c484d2b4a346f4e18af1ec60b"
     },
     {
       "path": "Tests/NativeTests.m",
-      "sha256": "f49faa1d55e5e9cb6190262382a89c104f0ccb1a9443c2af35d30b1a56b28a68",
-      "bytes": 4295
+      "bytes": 6409,
+      "sha256": "d04dfb91c35ec67774f3270c7c6cbb2214c309ee012cdaf7f60290bd1b105ff5"
     },
     {
       "path": "Tests/chat_notes.md",
-      "sha256": "38ebd6befcc8ff7a480dfef886b3078e2804f5e5fb490220bce01eb35b50c307",
-      "bytes": 7912
+      "bytes": 7912,
+      "sha256": "38ebd6befcc8ff7a480dfef886b3078e2804f5e5fb490220bce01eb35b50c307"
     },
     {
       "path": "Tests/check_project.py",
-      "sha256": "38cc99fef1c5f0804e1d05ea2401b5714a8c0c3e54e7dbc9aef143c96c1cd905",
-      "bytes": 2895
+      "bytes": 2895,
+      "sha256": "38cc99fef1c5f0804e1d05ea2401b5714a8c0c3e54e7dbc9aef143c96c1cd905"
+    },
+    {
+      "path": "Tests/check_trimmed_actions.py",
+      "bytes": 1885,
+      "sha256": "6d6fa5add9c97a00a6a2cf3cf3435cd63e1aaa3036939a228d3a8d269164a4b3"
     },
     {
       "path": "Tests/geometry.c",
-      "sha256": "cb2ce35d99d7ed033580128621417fba85fb36cc441c881be645ca9caaea717e",
-      "bytes": 1770
+      "bytes": 1770,
+      "sha256": "cb2ce35d99d7ed033580128621417fba85fb36cc441c881be645ca9caaea717e"
     },
     {
       "path": "Tests/run_native_tests.sh",
-      "sha256": "a6304d5b16194d2fe02356eebe430cacae1a4713f43fde21a2875f0bb8310aec",
-      "bytes": 728
+      "bytes": 728,
+      "sha256": "a6304d5b16194d2fe02356eebe430cacae1a4713f43fde21a2875f0bb8310aec"
     },
     {
       "path": "build.sh",
-      "sha256": "48382f8bfbc1aa940fc39a87dde5a2940a8cd4c9e6cf13532cb47bcb92edafa7",
-      "bytes": 709
+      "bytes": 709,
+      "sha256": "48382f8bfbc1aa940fc39a87dde5a2940a8cd4c9e6cf13532cb47bcb92edafa7"
     },
     {
       "path": "control",
-      "sha256": "8af6f9842767d38f61c390ad47166d9222d227e8dfe8b4ce2291a92438e48dda",
-      "bytes": 297
+      "bytes": 297,
+      "sha256": "8af6f9842767d38f61c390ad47166d9222d227e8dfe8b4ce2291a92438e48dda"
     },
     {
       "path": "layout/Library/PreferenceLoader/Preferences/HaogeKeyboardToolbarAIPrefs.plist",
-      "sha256": "cd30074f1aec0b053bb5f3db8b57d219d39204d739751e7466f6d23b9cc16528",
-      "bytes": 588
+      "bytes": 588,
+      "sha256": "cd30074f1aec0b053bb5f3db8b57d219d39204d739751e7466f6d23b9cc16528"
     },
     {
       "path": "tweak.json",
-      "sha256": "590aabbc070112aef33e3232d42197bbb5bce6e22bac10fefe9d21cea38d6a70",
-      "bytes": 408
+      "bytes": 408,
+      "sha256": "590aabbc070112aef33e3232d42197bbb5bce6e22bac10fefe9d21cea38d6a70"
     }
-  ]
+  ],
+  "base_source_zip_sha256": "1a5ae168ff1485f39b4d6ea350d1116d8a106945735cf616edc288a629a1bcf7",
+  "base_commit": "0df8fbd27f6087fdeab4f6db33c1d6f9d6572a43",
+  "revision": "ten unwanted actions removed; eight remaining; legacy toolbar preference cleanup"
 }

@@ -29,12 +29,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check source scope and delivered v2 provenance
+      - name: Check trimmed action scope and source provenance
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p cloud-output
           python3 Tests/check_project.py | tee cloud-output/project-checks.json
+          python3 Tests/check_trimmed_actions.py | tee cloud-output/trimmed-actions.json
           python3 - <<'PY'
           from pathlib import Path
           import json, hashlib
@@ -42,7 +43,7 @@ jobs:
           for item in record['files']:
               assert hashlib.sha256(Path(item['path']).read_bytes()).hexdigest()==item['sha256'], item['path']
           Path('cloud-output/source-manifest.json').write_text(json.dumps(record,ensure_ascii=False,indent=2))
-          print('Delivered v2 source hashes verified:',len(record['files']))
+          print('Current trimmed source hashes verified:',len(record['files']))
           PY
 
       - name: Select Xcode and install host tools
@@ -124,7 +125,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
-      - name: Publish private repository release
+      - name: Publish verified package release
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ github.token }}

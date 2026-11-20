@@ -13,8 +13,8 @@ static HaogeKeyboardToolbarAIStreamDecoder *haoge_keyboardtoolbarai_decode(NSStr
     [d haoge_keyboardtoolbarai_finish];return d;
 }
 int main(void) { @autoreleasepool {
-    HG_TEST(haoge_keyboardtoolbarai_actionCatalog().count==18);
-    HG_TEST(haoge_keyboardtoolbarai_defaultButtons().count==12);
+    HG_TEST(haoge_keyboardtoolbarai_actionCatalog().count==8);
+    HG_TEST(haoge_keyboardtoolbarai_defaultButtons().count==7);
     HG_TEST(haoge_keyboardtoolbarai_providerPresets().count==8);
     HG_TEST([haoge_keyboardtoolbarai_normalizeButtons(@[@"copyText",@"paste",@"paste",@"invalid",@4]) isEqual:@[@"selectAllAndCopy",@"paste"]]);
     HG_TEST([haoge_keyboardtoolbarai_bindingAction(@{},@"paste",0) isEqual:@"paste"]);
@@ -24,6 +24,32 @@ int main(void) { @autoreleasepool {
     HG_TEST(haoge_keyboardtoolbarai_bindingAction(map,@"paste",0)==nil);
     map=haoge_keyboardtoolbarai_storeBinding(map,@"paste",1,@"copyText");
     HG_TEST([haoge_keyboardtoolbarai_bindingAction(map,@"paste",1) isEqual:@"selectAllAndCopy"]);
+    NSArray *removed=@[@"showClipboard",@"moveLeft",@"moveRight",@"insertNewline",@"showEmojiKeyboard",@"snapperFreeze",@"snapperLong",@"screenshotShell",@"screenshotWatermark",@"screenshotBoth"];
+    for (NSString *old in removed) {
+        HG_TEST(![haoge_keyboardtoolbarai_actionIDs() containsObject:old]);
+        HG_TEST(haoge_keyboardtoolbarai_normalizeButtons(@[old]).count==0);
+        HG_TEST(haoge_keyboardtoolbarai_bindingAction(@{},old,0)==nil);
+        HG_TEST(haoge_keyboardtoolbarai_bindingAction(@{@"paste":@{@"up":old}},@"paste",1)==nil);
+        NSDictionary *disabled=haoge_keyboardtoolbarai_storeBinding(@{},@"paste",0,old);
+        HG_TEST([disabled[@"paste"][@"tap"] isEqual:@""]);
+    }
+    NSDictionary *legacy=@{@"Buttons":@[@"paste",@"moveLeft",@"kt_showAI",@"showClipboard"],
+        @"ActionBindings":@{@"paste":@{@"tap":@"showClipboard",@"up":@"kt_showAI",@"down":@""},@"moveLeft":@{@"tap":@"paste"}},
+        @"ActionNames":@{@"paste":@"粘贴保留",@"moveLeft":@"移除旧名"},
+        @"enabled":@YES,@"toolbarDarkColor":@"#FF202020",@"AIConfiguration":@{@"profiles":@[],@"stream":@YES}};
+    NSDictionary *clean=haoge_keyboardtoolbarai_normalizeToolbarPreferences(legacy);
+    HG_TEST([clean[@"Buttons"] isEqual:@[@"paste",@"kt_showAI"]]);
+    HG_TEST([clean[@"ActionBindings"][@"paste"][@"tap"] isEqual:@""]);
+    HG_TEST(clean[@"ActionBindings"][@"moveLeft"]==nil);
+    HG_TEST([clean[@"ActionBindings"][@"paste"][@"up"] isEqual:@"kt_showAI"]);
+    HG_TEST([clean[@"ActionBindings"][@"paste"][@"down"] isEqual:@""]);
+    HG_TEST([clean[@"ActionNames"] isEqual:@{@"paste":@"粘贴保留"}]);
+    HG_TEST([clean[@"AIConfiguration"] isEqual:legacy[@"AIConfiguration"]]);
+    HG_TEST([clean[@"enabled"] isEqual:@YES]);
+    HG_TEST([clean[@"toolbarDarkColor"] isEqual:legacy[@"toolbarDarkColor"]]);
+    HG_TEST([haoge_keyboardtoolbarai_normalizeToolbarPreferences(clean) isEqual:clean]);
+    HG_TEST([haoge_keyboardtoolbarai_normalizeToolbarPreferences(@{@"Buttons":@[]})[@"Buttons"] count]==0);
+    HG_TEST(haoge_keyboardtoolbarai_normalizeToolbarPreferences(@{})[@"Buttons"]==nil);
     HG_TEST([haoge_keyboardtoolbarai_normalizeEndpoint(@" https://example.invalid/v1/chat/completions/ ") isEqual:@"https://example.invalid/v1"]);
     HG_TEST([haoge_keyboardtoolbarai_normalizeEndpoint(@"https://example.invalid/v1/models") isEqual:@"https://example.invalid/v1"]);
     for(id bad in @[@4,@"http://example.invalid",@"https://u:p@example.invalid",@"https://example.invalid?x=1",@"https://example.invalid#x",@"not-a-url"]) HG_TEST(haoge_keyboardtoolbarai_normalizeEndpoint(bad)==nil);

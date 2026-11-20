@@ -57,9 +57,6 @@ static void haoge_keyboardtoolbarai_hook(Class cls,SEL selector,IMP replacement,
     if (returnsBool?(result[0]!='B' && result[0]!='c'):(result[0]!='v')) return;
     MSHookMessageEx(cls,selector,replacement,original);
 }
-static NSDictionary *haoge_keyboardtoolbarai_externalURLs(void) {
-    return @{@"snapperFreeze":@"prefs:root=snapper4_freeze",@"snapperLong":@"prefs:root=snapper4_long",@"screenshotShell":@"prefs:root=screenshot-shell",@"screenshotWatermark":@"prefs:root=screenshot-watermark",@"screenshotBoth":@"prefs:root=screenshot-both"};
-}
 static void haoge_keyboardtoolbarai_actionNotification(CFNotificationCenterRef center,void *observer,CFStringRef name,const void *object,CFDictionaryRef info) {
     NSString *notification=[(__bridge NSString *)name copy];
     dispatch_async(dispatch_get_main_queue(),^{
@@ -72,10 +69,6 @@ static void haoge_keyboardtoolbarai_actionNotification(CFNotificationCenterRef c
             if (![haoge_keyboardtoolbarai_actionIDs() containsObject:action]) return;
             SEL selector=NSSelectorFromString([@"haoge_keyboardtoolbarai_" stringByAppendingString:action]);
             if ([haoge_keyboardtoolbarai_actions respondsToSelector:selector]) ((void(*)(id,SEL))objc_msgSend)(haoge_keyboardtoolbarai_actions,selector);
-        } else if ([notification hasPrefix:@"com.haoge.keyboardtoolbarai.external."] && [NSBundle.mainBundle.bundleIdentifier isEqualToString:@"com.apple.springboard"]) {
-            NSString *url=haoge_keyboardtoolbarai_externalURLs()[[notification substringFromIndex:@"com.haoge.keyboardtoolbarai.external.".length]];
-            SEL selector=NSSelectorFromString(@"applicationOpenURL:");
-            if (url && [UIApplication.sharedApplication respondsToSelector:selector]) ((void(*)(id,SEL,id))objc_msgSend)(UIApplication.sharedApplication,selector,[NSURL URLWithString:url]);
         }
     });
 }
@@ -103,10 +96,7 @@ __attribute__((constructor)) static void haoge_keyboardtoolbarai_initialize(void
                 NSString *name=[@"com.haoge.keyboardtoolbarai.action." stringByAppendingString:action];
                 CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(),NULL,haoge_keyboardtoolbarai_actionNotification,(__bridge CFStringRef)name,NULL,CFNotificationSuspensionBehaviorDeliverImmediately);
             }
-            if ([NSBundle.mainBundle.bundleIdentifier isEqualToString:@"com.apple.springboard"]) for (NSString *action in haoge_keyboardtoolbarai_externalURLs()) {
-                NSString *name=[@"com.haoge.keyboardtoolbarai.external." stringByAppendingString:action];
-                CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(),NULL,haoge_keyboardtoolbarai_actionNotification,(__bridge CFStringRef)name,NULL,CFNotificationSuspensionBehaviorDeliverImmediately);
-            }
+
         });
     }
 }

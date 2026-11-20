@@ -71,7 +71,13 @@ def verify(path,scheme):
  if scheme=='roothide':assert fields['Architecture']=='iphoneos-arm64e' and not any(n.startswith('var/jb/') for n in payload)
  targets={}
  for label,suffix in [('main','HaogeKeyboardToolbarAI.dylib'),('prefs','HaogeKeyboardToolbarAIPrefs.bundle/HaogeKeyboardToolbarAIPrefs')]:
-  candidates=[(n,b) for n,b in payload.items() if n.endswith(suffix)];assert len(candidates)==1,(label,len(candidates));name,b=candidates[0];targets[label]={'path':name,'sha256':hashlib.sha256(b).hexdigest(),'slices':macho(b)}
+  candidates=[(n,b) for n,b in payload.items() if n.endswith(suffix)];assert len(candidates)==1,(label,len(candidates));name,b=candidates[0]
+  for old in ['showClipboard','moveLeft','moveRight','moveCursor','insertNewline','showEmojiKeyboard','snapperFreeze','snapperLong','screenshotShell','screenshotWatermark','screenshotBoth']:
+   assert ('haoge_keyboardtoolbarai_'+old).encode() not in b,(label,old,'removed selector still compiled')
+   assert (old+'\0').encode() not in b,(label,old,'removed action ID still compiled')
+  for text in ['ClipboardHelperRuntime','UIKeyboardInputModeController','prefs:root=snapper4','prefs:root=screenshot-','com.axs.clipboard.core.show','com.haoge.keyboardtoolbarai.external.']:
+   assert text.encode() not in b,(label,text,'removed bridge still compiled')
+  targets[label]={'path':name,'sha256':hashlib.sha256(b).hexdigest(),'slices':macho(b),'removed_actions_absent':True}
  for name,b in payload.items():
   if name.endswith('HaogeKeyboardToolbarAI.plist'):
    root=plistlib.loads(b);assert 'com.apple.UIKit' in root['Filter']['Bundles']

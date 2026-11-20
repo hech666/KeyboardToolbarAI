@@ -3,6 +3,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import "HaogeKeyboardToolbarAIPaths.h"
+#import "HaogeKeyboardToolbarAIModel.h"
 
 static NSString * const HaogeKeyboardToolbarAIPreferencesDomain = @"com.haoge.keyboardtoolbarai";
 static NSString * const HaogeKeyboardToolbarAIPreferencesChanged = @"com.haoge.keyboardtoolbarai.preferences-changed";
@@ -11,12 +12,12 @@ static inline NSDictionary *haoge_keyboardtoolbarai_readPreferences(void) {
     NSString *path = haoge_keyboardtoolbarai_preferencesPath();
     NSDictionary *values = path.length > 0 ? [NSDictionary dictionaryWithContentsOfFile:path] : nil;
     if ([values isKindOfClass:[NSDictionary class]]) {
-        return values;
+        return haoge_keyboardtoolbarai_normalizeToolbarPreferences(values);
     }
     // Compatibility fallback, not a second writable file location.
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:HaogeKeyboardToolbarAIPreferencesDomain];
     [defaults synchronize];
-    return [defaults persistentDomainForName:HaogeKeyboardToolbarAIPreferencesDomain] ?: @{};
+    return haoge_keyboardtoolbarai_normalizeToolbarPreferences([defaults persistentDomainForName:HaogeKeyboardToolbarAIPreferencesDomain] ?: @{});
 }
 
 // The PreferenceBundle is the only caller allowed to write.
@@ -48,6 +49,7 @@ static inline BOOL haoge_keyboardtoolbarai_writePreference(NSString *key, id val
     }
     if (value) values[key] = value;
     else [values removeObjectForKey:key];
+    values=[haoge_keyboardtoolbarai_normalizeToolbarPreferences(values) mutableCopy];
     if (![manager createDirectoryAtPath:[path stringByDeletingLastPathComponent]
             withIntermediateDirectories:YES attributes:nil error:error]) {
         return NO;
