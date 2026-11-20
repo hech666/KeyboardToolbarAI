@@ -7,7 +7,7 @@
         <key>bundle</key><string>HaogeKeyboardToolbarAIPrefs</string>
         <key>cell</key><string>PSLinkCell</string>
         <key>detail</key><string>HaogeKeyboardToolbarAIRootListController</string>
-        <key>icon</key><string>icon</string>        
+        <key>icon</key><string>KeyboardToolbarAIIcon</string>
         <key>isController</key><true/>
         <key>label</key><string>键盘工具栏 AI</string>
     </dict>

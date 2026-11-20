@@ -1,0 +1,160 @@
+{
+  "icon_base": "KeyboardToolbarAIIcon",
+  "original_upload_sha256": "81958597c3dd28ed8c2cc8834042cf7e2d73fb4ec1db00ed2239bf562426764d",
+  "original_dimensions": [
+    60,
+    60
+  ],
+  "uploaded_RGBA_pixels_sha256": "cd7cb5935232e54d0f991d57dae715f872cf9150df6436f19fca6996d3e84b46",
+  "two_x_pixels_unchanged": true,
+  "metadata_removed": true,
+  "alpha_preserved": true,
+  "files": [
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon.png",
+      "size": [
+        30,
+        30
+      ],
+      "sha256": "41051f3b36fb8464d3d66eacfc2dcbea14c59c88c0ec36a9252bfabd95e9ff5f",
+      "bytes": 1619
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon@2x.png",
+      "size": [
+        60,
+        60
+      ],
+      "sha256": "b102cd814285ea9b361af8674974f4df57c3c6ab620306af75986df5cc1bd86e",
+      "bytes": 3942
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon@3x.png",
+      "size": [
+        90,
+        90
+      ],
+      "sha256": "e13d9c3d8c37f71f5f1b09786107adc92cc10b705f4ce62685de288ee564bf6f",
+      "bytes": 8169
+    }
+  ],
+  "functional_baseline_commit": "915003d75fd63e63e1d1c8782b4c460d2d3a3f43",
+  "functional_source_baseline": [
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIActionProxy.m",
+      "sha256": "21a0e31c6fd0447931601224ce50f87bd3c94df3f0d12e5a69f8e1af1e6a86fe"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIActions.h",
+      "sha256": "edca6ab3b15a30383d02f986142bf6e0ea8753c85984a71606fe600504415a55"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIActions.m",
+      "sha256": "59f93155f74a5d47060a0dbe23fdb35e1a9afa659b5feb1cd714379c895bd9dc"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIChat.h",
+      "sha256": "b28873cdde0498e7dcc710cbda0d11f28ae0ce754cb97e7456360aab80b17a4c"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIChat.m",
+      "sha256": "8f44648283ca7896d18a4e32b38fffe8f520852806fa32b8ecc079d4a8e016d3"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIColor.m",
+      "sha256": "0543a8fe7aab9e818d2683fe45d14c1476c463e3cc91f4b76b9fdad8d9a3a69a"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIConfig.h",
+      "sha256": "40662a634c805461ef2d18d48633caf05a466d50a64c2af2b0a017ce7179e1b3"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIConfig.m",
+      "sha256": "fe6b5603607c3a55f5a13f614f9c176f1e5449df1968515b702a47ec4a69e418"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIGeometry.h",
+      "sha256": "849b4c5d6b1f29c433da39c332909ddfb52fbb95a2dc0f24fb48a906df2aa0ce"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIHooks.m",
+      "sha256": "6b71d7f9b1cb22a1dfdcef0fe950b1b91f8230cdf127aed6bc09ec83ac428c97"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIModel.h",
+      "sha256": "fac76a24be3beca2f37d2fa4f44894b0ae3b126772ba746210e578500bf99a96"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIModel.m",
+      "sha256": "3bf7cd312656f31c77989cdd1b9a879e2273a9ecc5cf4d79716f777db837aeaa"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAINetwork.h",
+      "sha256": "98ef9374ccd99bcbf28b55a1d4c2ead8b1e4c141e1fdb7d14d5f8d1dcbb665ab"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAINetwork.m",
+      "sha256": "b99a15ce3ca1541eb6271cf8bccf8b6064cfab257d8f97ed0bc78229fcc5c51b"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIPaths.h",
+      "sha256": "eeaac2ed515308aef6fd5c3a1813ae739cbbfb87fe7776c99a13a2509afb2318"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIPreferences.h",
+      "sha256": "bed7ed02812ba964db5a9fcef4ab1d26a4ff2e15e8a83508e67e6e5e9926329b"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIToolbar.h",
+      "sha256": "d15c89f0b70b35773e4f47151168d7a4116a492ad51525344469340f84346e7d"
+    },
+    {
+      "path": "Sources/HaogeKeyboardToolbarAIToolbar.mm",
+      "sha256": "5bb0be21675820593e739f1c846049333a50160c484d2b4a346f4e18af1ec60b"
+    },
+    {
+      "path": "Headers/HaogeKeyboardToolbarAIPrivate.h",
+      "sha256": "f3a4737a4bf57f011c5aa94639241fb38a894e7cce5a3424d09fbaf83582ba93"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsAI.m",
+      "sha256": "26e2a068582aef499c9738d7d93258f3a8478ed260a4e89acdf8da3922276486"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsAIEditors.h",
+      "sha256": "e63f1517a2332f46b009d9cbef65b49c9950f90a06ffa88629193281b29c8f27"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsAIEditors.m",
+      "sha256": "e5a5b2ba4d354c2959401bfb450a36723fe5ccd4a552f63796c21a066c140c5a"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsButtons.m",
+      "sha256": "884d4c8ce6f524a73808568aef2fb91546140e6147d8d304c738d2a3af5680ac"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsControllers.h",
+      "sha256": "9b26cd3d3bc89222fd8607f96a4a242b845a5e7842d925e91ef60db446daa50c"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsMain.m",
+      "sha256": "d1f45446890d0e96f922e00b82a64a9c7a1ae68c83c9cd9e0259b7a16a6e2541"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsPage.h",
+      "sha256": "b32d073f435d35d4d57b977c378461c667093ce0ba35cc4f0d182aa5f3ebf746"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIPrefsPage.m",
+      "sha256": "b70036aaba4a4fdf2524bd580fd706a36d1c9912d75dc9b1d1ba0c865a3cdff7"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIRootListController.h",
+      "sha256": "3ca81719a797f61a4321bc244c9d49dee341d8971bc9d7a23c5bb8dd5325e105"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/HaogeKeyboardToolbarAIRootListController.m",
+      "sha256": "73857fc4ace0c78f4388c7a128ce9b4ad7474e9547b7d68381f0650f47580eff"
+    }
+  ]
+}

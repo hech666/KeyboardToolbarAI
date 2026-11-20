@@ -6,4 +6,5 @@ Description: 键盘工具栏与AI问答独立源码版，不含键盘美化
 Maintainer: haoge
 Author: haoge
 Section: Haoge-Tweaks
+Icon: https://raw.githubusercontent.com/hech666/KeyboardToolbarAI/main/HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon%402x.png
 Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader

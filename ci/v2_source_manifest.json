@@ -72,13 +72,23 @@
     },
     {
       "path": "HaogeKeyboardToolbarAIPrefs/Resources/Info.plist",
-      "bytes": 681,
-      "sha256": "09266e6128b6db710f71112cecf5f8189a26fc72441ca2dfc35d7d544551cbac"
+      "bytes": 846,
+      "sha256": "b0fe6c14c42bbde390b99d2195a975486a8510ebfdaa2ab59b25c172a7f5d2b4"
     },
     {
-      "path": "HaogeKeyboardToolbarAIPrefs/Resources/icon@2x.png",
-      "bytes": 3446,
-      "sha256": "57f45f09b2748cb68d5a7403f386304e0e3441929c34a37bded602d47c2f6270"
+      "path": "HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon.png",
+      "bytes": 1619,
+      "sha256": "41051f3b36fb8464d3d66eacfc2dcbea14c59c88c0ec36a9252bfabd95e9ff5f"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon@2x.png",
+      "bytes": 3942,
+      "sha256": "b102cd814285ea9b361af8674974f4df57c3c6ab620306af75986df5cc1bd86e"
+    },
+    {
+      "path": "HaogeKeyboardToolbarAIPrefs/Resources/KeyboardToolbarAIIcon@3x.png",
+      "bytes": 8169,
+      "sha256": "e13d9c3d8c37f71f5f1b09786107adc92cc10b705f4ce62685de288ee564bf6f"
     },
     {
       "path": "Headers/HaogeKeyboardToolbarAIPrivate.h",
@@ -201,6 +211,11 @@
       "sha256": "38ebd6befcc8ff7a480dfef886b3078e2804f5e5fb490220bce01eb35b50c307"
     },
     {
+      "path": "Tests/check_icon.py",
+      "bytes": 2007,
+      "sha256": "c57b7214597bc137448810fa11f99197c513359f4077d6183ad3b6b44675f1ed"
+    },
+    {
       "path": "Tests/check_project.py",
       "bytes": 2895,
       "sha256": "38cc99fef1c5f0804e1d05ea2401b5714a8c0c3e54e7dbc9aef143c96c1cd905"
@@ -226,14 +241,19 @@
       "sha256": "48382f8bfbc1aa940fc39a87dde5a2940a8cd4c9e6cf13532cb47bcb92edafa7"
     },
     {
+      "path": "ci/icon_manifest.json",
+      "bytes": 5935,
+      "sha256": "a4bfb167333e44722593f604a9749e93681848e7f88e335adc02abc1542ea7a1"
+    },
+    {
       "path": "control",
-      "bytes": 297,
-      "sha256": "8af6f9842767d38f61c390ad47166d9222d227e8dfe8b4ce2291a92438e48dda"
+      "bytes": 437,
+      "sha256": "e33c7546114e37de1457f4daf09d56dea610541154c187a0fbf2884124be3480"
     },
     {
       "path": "layout/Library/PreferenceLoader/Preferences/HaogeKeyboardToolbarAIPrefs.plist",
-      "bytes": 588,
-      "sha256": "cd30074f1aec0b053bb5f3db8b57d219d39204d739751e7466f6d23b9cc16528"
+      "bytes": 597,
+      "sha256": "08a82d03fd37e0429efc33d177cc87a76ff3a7ebbb79f5c3b1c2efa5af25761e"
     },
     {
       "path": "tweak.json",
@@ -243,5 +263,6 @@
   ],
   "base_source_zip_sha256": "1a5ae168ff1485f39b4d6ea350d1116d8a106945735cf616edc288a629a1bcf7",
   "base_commit": "0df8fbd27f6087fdeab4f6db33c1d6f9d6572a43",
-  "revision": "ten unwanted actions removed; eight remaining; legacy toolbar preference cleanup"
+  "revision": "Custom user-provided glass icon; all functional source unchanged from 5.2.0-2",
+  "icon_change_base_commit": "915003d75fd63e63e1d1c8782b4c460d2d3a3f43"
 }

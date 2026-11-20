@@ -8,6 +8,9 @@
     <key>CFBundlePackageType</key><string>BNDL</string>
     <key>CFBundleShortVersionString</key><string>5.2.0</string>
     <key>CFBundleVersion</key><string>5.2.0</string>
+    <key>CFBundleIconFile</key><string>KeyboardToolbarAIIcon.png</string>
+    <key>CFBundleIconFiles</key>
+    <array><string>KeyboardToolbarAIIcon</string></array>
     <key>NSPrincipalClass</key><string>HaogeKeyboardToolbarAIRootListController</string>
 </dict>
 </plist>

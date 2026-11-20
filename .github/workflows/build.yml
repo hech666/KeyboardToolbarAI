@@ -36,6 +36,7 @@ jobs:
           mkdir -p cloud-output
           python3 Tests/check_project.py | tee cloud-output/project-checks.json
           python3 Tests/check_trimmed_actions.py | tee cloud-output/trimmed-actions.json
+          python3 Tests/check_icon.py | tee cloud-output/icon-checks.json
           python3 - <<'PY'
           from pathlib import Path
           import json, hashlib

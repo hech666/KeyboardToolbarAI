@@ -82,6 +82,21 @@ def verify(path,scheme):
   if name.endswith('HaogeKeyboardToolbarAI.plist'):
    root=plistlib.loads(b);assert 'com.apple.UIKit' in root['Filter']['Bundles']
  assert any('PreferenceLoader/Preferences/HaogeKeyboardToolbarAIPrefs.plist' in n for n in payload)
- return dict(package=fields,scheme=scheme,deb=path.name,bytes=len(deb),sha256=hashlib.sha256(deb).hexdigest(),binaries=targets,payload_files=len(payload),commit=os.environ.get('GITHUB_SHA',''),passed=True)
+ icons={}
+ icon_manifest=json.loads((Path(__file__).resolve().parent/'icon_manifest.json').read_text())
+ for item in icon_manifest['files']:
+  basename=Path(item['path']).name
+  matches=[(n,b) for n,b in payload.items() if n.endswith('/HaogeKeyboardToolbarAIPrefs.bundle/'+basename)]
+  assert len(matches)==1,('icon resource missing',basename)
+  name,b=matches[0];assert hashlib.sha256(b).hexdigest()==item['sha256'],('packaged icon differs',basename)
+  assert b[:8]==b'\x89PNG\r\n\x1a\n' and list(struct.unpack('>II',b[16:24]))==item['size']
+  icons[basename]={'path':name,'sha256':item['sha256'],'size':item['size']}
+ loader=next(b for n,b in payload.items() if n.endswith('PreferenceLoader/Preferences/HaogeKeyboardToolbarAIPrefs.plist'))
+ assert plistlib.loads(loader)['entry']['icon']==icon_manifest['icon_base']
+ info=next(b for n,b in payload.items() if n.endswith('/HaogeKeyboardToolbarAIPrefs.bundle/Info.plist'))
+ assert plistlib.loads(info)['CFBundleIconFile']==icon_manifest['icon_base']+'.png'
+ assert fields.get('Icon','').endswith('/'+icon_manifest['icon_base']+'%402x.png')
+ assert not any(n.endswith('/HaogeKeyboardToolbarAIPrefs.bundle/icon@2x.png') for n in payload)
+ return dict(package=fields,scheme=scheme,deb=path.name,bytes=len(deb),sha256=hashlib.sha256(deb).hexdigest(),binaries=targets,icons=icons,icon_references_verified=True,payload_files=len(payload),commit=os.environ.get('GITHUB_SHA',''),passed=True)
 if __name__=='__main__':
  path=Path(sys.argv[1]);scheme=sys.argv[2];output=Path(sys.argv[3]);report=verify(path,scheme);output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False,indent=2))
